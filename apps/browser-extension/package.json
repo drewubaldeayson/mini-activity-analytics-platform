@@ -1,0 +1,9 @@
+{
+  "name": "@mini-analytics/browser-extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node --check background.js && node --check options.js"
+  }
+}

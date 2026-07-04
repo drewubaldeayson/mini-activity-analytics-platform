@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Activity Analytics</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #f5faf6 0%, #ebf3ed 100%);
+        color: #163222;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      section {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid #d5e3d8;
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 24px 60px rgba(19, 47, 31, 0.08);
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: 32px;
+      }
+
+      p {
+        margin: 0 0 24px;
+        color: #4f6a59;
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+      }
+
+      label {
+        display: grid;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      input[type="text"],
+      input[type="url"] {
+        height: 44px;
+        border: 1px solid #cfe0d4;
+        border-radius: 16px;
+        padding: 0 14px;
+        font-size: 14px;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      button {
+        height: 44px;
+        border: none;
+        border-radius: 16px;
+        background: #1f6f4c;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      #status {
+        min-height: 20px;
+        font-size: 14px;
+        color: #1f6f4c;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Mini Activity Analytics</h1>
+        <p>Configure where the extension sends active-tab activity and how the browser shows up as a tracked device.</p>
+
+        <form id="settings-form">
+          <label>
+            Backend API URL
+            <input id="apiUrl" type="url" placeholder="http://localhost:4000" required />
+          </label>
+
+          <label>
+            API token
+            <input id="apiToken" type="text" placeholder="Optional bearer token" />
+          </label>
+
+          <label>
+            Device name
+            <input id="deviceName" type="text" placeholder="Chrome Browser" required />
+          </label>
+
+          <label>
+            Device ID
+            <input id="deviceId" type="text" required />
+          </label>
+
+          <label class="checkbox">
+            <input id="trackingEnabled" type="checkbox" />
+            Enable browser activity tracking
+          </label>
+
+          <label>
+            Excluded domains
+            <input id="excludedDomains" type="text" placeholder="facebook.com, youtube.com" />
+          </label>
+
+          <label class="checkbox">
+            <input id="scheduleEnabled" type="checkbox" />
+            Restrict tracking to a schedule
+          </label>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <label>
+              Start time
+              <input id="trackingWindowStart" type="text" placeholder="09:00" />
+            </label>
+            <label>
+              End time
+              <input id="trackingWindowEnd" type="text" placeholder="18:00" />
+            </label>
+          </div>
+
+          <label class="checkbox">
+            <input id="weekdaysOnly" type="checkbox" />
+            Weekdays only
+          </label>
+
+          <button type="submit">Save settings</button>
+          <div id="status"></div>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

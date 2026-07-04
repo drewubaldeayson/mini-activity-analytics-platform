@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Mini Activity Analytics",
+  "version": "1.0.0",
+  "description": "Tracks the active tab and syncs browser activity to the Mini Activity Analytics backend.",
+  "permissions": ["tabs", "storage", "idle", "alarms", "windows"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "options_page": "options.html",
+  "action": {
+    "default_title": "Mini Activity Analytics",
+    "default_popup": "popup.html"
+  }
+}

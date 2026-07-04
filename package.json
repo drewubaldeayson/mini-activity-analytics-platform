@@ -1,0 +1,18 @@
+{
+  "name": "mini-activity-analytics-platform",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@11.7.0",
+  "scripts": {
+    "dev:backend": "pnpm --filter @mini-analytics/backend dev",
+    "dev:dashboard": "pnpm --filter @mini-analytics/dashboard dev",
+    "dev:agent": "pnpm --filter @mini-analytics/agent-ui dev",
+    "build:web": "pnpm --filter @mini-analytics/shared build && pnpm --filter @mini-analytics/shared-ui build && pnpm --filter @mini-analytics/backend build && pnpm --filter @mini-analytics/dashboard build && pnpm --filter @mini-analytics/agent-ui build",
+    "validate:backend": "pnpm --filter @mini-analytics/shared build && pnpm --filter @mini-analytics/backend build",
+    "validate:frontend": "pnpm --filter @mini-analytics/shared-ui validate && pnpm --filter @mini-analytics/browser-extension validate && pnpm --filter @mini-analytics/dashboard build && pnpm --filter @mini-analytics/agent-ui build:web",
+    "validate": "pnpm run validate:backend && pnpm run validate:frontend",
+    "build:agent": "cargo build --manifest-path apps/agent/src-tauri/Cargo.toml",
+    "build:tauri": "pnpm --filter @mini-analytics/agent-ui tauri build",
+    "build": "pnpm run build:web && pnpm run build:agent"
+  }
+}

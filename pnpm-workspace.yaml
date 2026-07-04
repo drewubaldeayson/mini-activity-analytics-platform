@@ -1,0 +1,6 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+allowBuilds:
+  active-win: true
+  esbuild: true

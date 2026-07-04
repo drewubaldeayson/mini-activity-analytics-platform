@@ -1,0 +1,27 @@
+{
+  "activityEvents": [
+    {
+      "deviceId": "device-1",
+      "deviceName": "Test Device",
+      "platform": "win32",
+      "appName": "Visual Studio Code",
+      "windowTitle": "README.md",
+      "state": "active",
+      "startedAt": "2026-07-03T08:00:00.000Z",
+      "endedAt": "2026-07-03T08:00:30.000Z",
+      "durationSeconds": 30,
+      "capturedAt": "2026-07-03T08:00:30.000Z"
+    }
+  ],
+  "heartbeats": [
+    {
+      "deviceId": "device-1",
+      "deviceName": "Test Device",
+      "platform": "win32",
+      "status": "active",
+      "capturedAt": "2026-07-03T08:00:30.000Z",
+      "lastAppName": "Visual Studio Code",
+      "lastWindowTitle": "README.md"
+    }
+  ]
+}
